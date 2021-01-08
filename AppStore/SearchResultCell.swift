@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class SearchResultCell: UICollectionViewCell {
     
@@ -16,10 +17,9 @@ final class SearchResultCell: UICollectionViewCell {
     private let categoryLabel = UILabel()
     private let ratingsLabel = UILabel()
     private let getButton = UIButton(type: .system)
-    private lazy var screenShotImageView1 = self.createScreenshotImageView()
-    private lazy var screenShotImageView2 = self.createScreenshotImageView()
-    private lazy var screenShotImageView3 = self.createScreenshotImageView()
-
+    private lazy var screenshotImageView0 = self.createScreenshotImageView()
+    private lazy var screenshotImageView1 = self.createScreenshotImageView()
+    private lazy var screenshotImageView2 = self.createScreenshotImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,15 +31,28 @@ final class SearchResultCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateCell(name: String, category: String, ratings: String) {
-        nameLabel.text = name
-        categoryLabel.text = category
-        ratingsLabel.text = ratings
+    func updateCell(withSearchResult searchResult: SearchResult) {
+        nameLabel.text = searchResult.trackName
+        categoryLabel.text = searchResult.primaryGenreName
+        ratingsLabel.text = String(searchResult.averageUserRating ?? 0)
+        
+        appIconImageView.sd_setImage(with: URL(string: searchResult.artworkUrl100))
+        
+        if searchResult.screenshotUrls.count > 0 {
+            screenshotImageView0.sd_setImage(with: URL(string: searchResult.screenshotUrls[0]))
+        }
+        if searchResult.screenshotUrls.count > 1 {
+            screenshotImageView1.sd_setImage(with: URL(string: searchResult.screenshotUrls[1]))
+        }
+        if searchResult.screenshotUrls.count > 2 {
+            screenshotImageView2.sd_setImage(with: URL(string: searchResult.screenshotUrls[2]))
+        }
     }
     
     private func configureAppIconImageView() {
         appIconImageView.backgroundColor = .systemRed
         appIconImageView.layer.cornerRadius = 12
+        appIconImageView.clipsToBounds = true
         appIconImageView.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -59,9 +72,13 @@ final class SearchResultCell: UICollectionViewCell {
     }
     
     private func createScreenshotImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .systemBlue
-        return imageView
+        let screenshotImageView = UIImageView()
+        screenshotImageView.backgroundColor = .systemBlue
+        screenshotImageView.layer.cornerRadius = 8
+        screenshotImageView.layer.borderWidth = 0.5
+        screenshotImageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        screenshotImageView.clipsToBounds = true
+        return screenshotImageView
     }
     
     private func configureCell() {
@@ -79,7 +96,7 @@ final class SearchResultCell: UICollectionViewCell {
         infoStackView.alignment = .center
         infoStackView.spacing = 10
         
-        let screenshotStackView = UIStackView(arrangedSubviews: [screenShotImageView1, screenShotImageView2, screenShotImageView3])
+        let screenshotStackView = UIStackView(arrangedSubviews: [screenshotImageView0, screenshotImageView1, screenshotImageView2])
         screenshotStackView.spacing = 10
         screenshotStackView.distribution = .fillEqually
         

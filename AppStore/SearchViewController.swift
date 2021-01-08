@@ -24,7 +24,7 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
 
         configureViewController()
         
-        NetworkManager.shared.fetchApps { [weak self] result in
+        SearchService.shared.fetchApps { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let results):
@@ -42,13 +42,12 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let searchResultCell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.reuseIdentifier, for: indexPath) as! SearchResultCell
-        let searchResult = searchResults[indexPath.item]
-        searchResultCell.updateCell(name: searchResult.trackName, category: searchResult.primaryGenreName, ratings: String(searchResult.averageUserRating ?? 0))
+        searchResultCell.updateCell(withSearchResult: searchResults[indexPath.item])
         return searchResultCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width)
+        return CGSize(width: view.frame.width, height: 265)
     }
     
     private func configureViewController() {
