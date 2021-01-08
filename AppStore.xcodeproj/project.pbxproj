@@ -66,19 +66,67 @@
 		D2E6E8A925A87006002F344F /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
-				D2E6E8AA25A87006002F344F /* AppDelegate.swift */,
-				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
-				D2FE7A9825A8D68C000238B1 /* SearchResult.swift */,
-				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
-				D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */,
-				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
-				D2FE7A9125A8D28B000238B1 /* SearchService.swift */,
-				D2FE7A9425A8D35F000238B1 /* ASError.swift */,
+				D2FE7AA225A8FC68000238B1 /* Search */,
+				D2FE7AA625A8FCE5000238B1 /* Utilities */,
+				D2FE7AA825A8FDE1000238B1 /* Controllers */,
+				D2FE7AA525A8FCD0000238B1 /* Supporting Files */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
 				D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */,
 				D2E6E8B825A87009002F344F /* Info.plist */,
 			);
 			path = AppStore;
+			sourceTree = "<group>";
+		};
+		D2FE7AA225A8FC68000238B1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D2FE7AA325A8FC70000238B1 /* Models */,
+				D2FE7AA425A8FC79000238B1 /* Views */,
+				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D2FE7AA325A8FC70000238B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2FE7A9825A8D68C000238B1 /* SearchResult.swift */,
+				D2FE7A9125A8D28B000238B1 /* SearchService.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2FE7AA425A8FC79000238B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D2FE7AA525A8FCD0000238B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
+				D2E6E8AA25A87006002F344F /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2FE7AA625A8FCE5000238B1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D2FE7A9425A8D35F000238B1 /* ASError.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D2FE7AA825A8FDE1000238B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
