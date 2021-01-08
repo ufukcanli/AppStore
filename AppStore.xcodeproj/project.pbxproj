@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8AA25A87006002F344F /* AppDelegate.swift */; };
 		D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8AC25A87006002F344F /* SceneDelegate.swift */; };
-		D2E6E8AF25A87006002F344F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8AE25A87006002F344F /* ViewController.swift */; };
-		D2E6E8B225A87006002F344F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E6E8B025A87006002F344F /* Main.storyboard */; };
 		D2E6E8B425A87009002F344F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E6E8B325A87009002F344F /* Assets.xcassets */; };
 		D2E6E8B725A87009002F344F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */; };
+		D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C225A870A9002F344F /* ASTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2E6E8A725A87006002F344F /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E6E8AA25A87006002F344F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E6E8AC25A87006002F344F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2E6E8AE25A87006002F344F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D2E6E8B125A87006002F344F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2E6E8B325A87009002F344F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E6E8B625A87009002F344F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2E6E8B825A87009002F344F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E6E8C225A870A9002F344F /* ASTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +56,7 @@
 			children = (
 				D2E6E8AA25A87006002F344F /* AppDelegate.swift */,
 				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
-				D2E6E8AE25A87006002F344F /* ViewController.swift */,
-				D2E6E8B025A87006002F344F /* Main.storyboard */,
+				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
 				D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */,
 				D2E6E8B825A87009002F344F /* Info.plist */,
@@ -126,7 +123,6 @@
 			files = (
 				D2E6E8B725A87009002F344F /* LaunchScreen.storyboard in Resources */,
 				D2E6E8B425A87009002F344F /* Assets.xcassets in Resources */,
-				D2E6E8B225A87006002F344F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E6E8AF25A87006002F344F /* ViewController.swift in Sources */,
+				D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */,
 				D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */,
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +142,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D2E6E8B025A87006002F344F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2E6E8B125A87006002F344F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
