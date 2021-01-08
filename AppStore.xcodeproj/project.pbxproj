@@ -61,8 +61,8 @@
 				D2E6E8AA25A87006002F344F /* AppDelegate.swift */,
 				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
 				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
-				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
 				D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */,
+				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
 				D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */,
 				D2E6E8B825A87009002F344F /* Info.plist */,
@@ -292,7 +292,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufukcanli.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -311,7 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ufukcanli.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
