@@ -9,6 +9,8 @@ import UIKit
 
 final class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    private var searchResults: [SearchResult] = []
+    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -22,10 +24,12 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
 
         configureViewController()
         
-        NetworkManager.shared.searchAPI { result in
+        NetworkManager.shared.fetchApps { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let results):
-                print(results)
+                self.searchResults = results.results
+                DispatchQueue.main.async { self.collectionView.reloadData() }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -33,11 +37,13 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return searchResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let searchResultCell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.reuseIdentifier, for: indexPath) as! SearchResultCell
+        let searchResult = searchResults[indexPath.item]
+        searchResultCell.updateCell(name: searchResult.trackName, category: searchResult.primaryGenreName, ratings: String(searchResult.averageUserRating ?? 0))
         return searchResultCell
     }
     

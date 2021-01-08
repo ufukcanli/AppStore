@@ -31,6 +31,12 @@ final class SearchResultCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateCell(name: String, category: String, ratings: String) {
+        nameLabel.text = name
+        categoryLabel.text = category
+        ratingsLabel.text = ratings
+    }
+    
     private func configureAppIconImageView() {
         appIconImageView.backgroundColor = .systemRed
         appIconImageView.layer.cornerRadius = 12
@@ -44,7 +50,7 @@ final class SearchResultCell: UICollectionViewCell {
     }
     
     private func configureGetButton() {
-        getButton.backgroundColor = .systemGray
+        getButton.backgroundColor = .systemGray4
         getButton.setTitle("GET", for: .normal)
         getButton.layer.cornerRadius = 16
         getButton.setTitleColor(.systemBlue, for: .normal)
@@ -59,7 +65,7 @@ final class SearchResultCell: UICollectionViewCell {
     }
     
     private func configureCell() {
-        backgroundColor = .systemGreen
+//        backgroundColor = .systemGreen
         
         configureAppIconImageView()
         

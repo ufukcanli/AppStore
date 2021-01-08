@@ -16,7 +16,7 @@ final class NetworkManager {
     
     private init() {}
     
-    func searchAPI(completion: @escaping (Result<ResultArray, ASError>) -> Void) {
+    func fetchApps(completion: @escaping (Result<ResultArray, ASError>) -> Void) {
             
         let endpoint = "\(baseURL)/search?term=instagram&entity=software"
         
