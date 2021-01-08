@@ -13,6 +13,7 @@
 		D2E6E8B725A87009002F344F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */; };
 		D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C225A870A9002F344F /* ASTabBarController.swift */; };
 		D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C625A87D1D002F344F /* SearchViewController.swift */; };
+		D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D2E6E8B825A87009002F344F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E6E8C225A870A9002F344F /* ASTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTabBarController.swift; sourceTree = "<group>"; };
 		D2E6E8C625A87D1D002F344F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
 				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
 				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
+				D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
 				D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */,
 				D2E6E8B825A87009002F344F /* Info.plist */,
@@ -140,6 +143,7 @@
 				D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */,
 				D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */,
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
+				D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
