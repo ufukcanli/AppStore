@@ -71,7 +71,7 @@ final class SearchResultCell: UICollectionViewCell {
         
         let infoStackView = UIStackView(arrangedSubviews: [appIconImageView, labelStackView, getButton])
         infoStackView.alignment = .center
-        infoStackView.spacing = 12
+        infoStackView.spacing = 10
         
         let screenshotStackView = UIStackView(arrangedSubviews: [screenShotImageView1, screenShotImageView2, screenShotImageView3])
         screenshotStackView.spacing = 10
@@ -80,7 +80,7 @@ final class SearchResultCell: UICollectionViewCell {
         let containerStackView = UIStackView(arrangedSubviews: [infoStackView, screenshotStackView])
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         containerStackView.axis = .vertical
-        containerStackView.spacing = 12
+        containerStackView.spacing = 10
         
         addSubview(containerStackView)
         

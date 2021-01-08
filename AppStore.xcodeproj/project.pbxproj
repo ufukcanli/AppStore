@@ -14,6 +14,9 @@
 		D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C225A870A9002F344F /* ASTabBarController.swift */; };
 		D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C625A87D1D002F344F /* SearchViewController.swift */; };
 		D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */; };
+		D2FE7A9225A8D28B000238B1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7A9125A8D28B000238B1 /* NetworkManager.swift */; };
+		D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7A9425A8D35F000238B1 /* ASError.swift */; };
+		D2FE7A9925A8D68C000238B1 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7A9825A8D68C000238B1 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D2E6E8C225A870A9002F344F /* ASTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTabBarController.swift; sourceTree = "<group>"; };
 		D2E6E8C625A87D1D002F344F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		D2FE7A9125A8D28B000238B1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D2FE7A9425A8D35F000238B1 /* ASError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASError.swift; sourceTree = "<group>"; };
+		D2FE7A9825A8D68C000238B1 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,12 @@
 			children = (
 				D2E6E8AA25A87006002F344F /* AppDelegate.swift */,
 				D2E6E8AC25A87006002F344F /* SceneDelegate.swift */,
+				D2FE7A9825A8D68C000238B1 /* SearchResult.swift */,
 				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
 				D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */,
 				D2E6E8C625A87D1D002F344F /* SearchViewController.swift */,
+				D2FE7A9125A8D28B000238B1 /* NetworkManager.swift */,
+				D2FE7A9425A8D35F000238B1 /* ASError.swift */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
 				D2E6E8B525A87009002F344F /* LaunchScreen.storyboard */,
 				D2E6E8B825A87009002F344F /* Info.plist */,
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FE7A9225A8D28B000238B1 /* NetworkManager.swift in Sources */,
 				D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */,
+				D2FE7A9925A8D68C000238B1 /* SearchResult.swift in Sources */,
 				D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */,
 				D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */,
+				D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */,
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
 				D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */,
 			);

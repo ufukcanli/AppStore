@@ -21,6 +21,15 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
         super.viewDidLoad()
 
         configureViewController()
+        
+        NetworkManager.shared.searchAPI { result in
+            switch result {
+            case .success(let results):
+                print(results)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
