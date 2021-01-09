@@ -21,7 +21,7 @@ final class ASTabBarController: UITabBarController {
         
         viewControllers = [
             createNavigationController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
-            createNavigationController(viewController: UIViewController(), title: "Apps", imageName: "apps"),
+            createNavigationController(viewController: AppsViewController(), title: "Apps", imageName: "apps"),
             createNavigationController(viewController: SearchViewController(), title: "Search", imageName: "search")
         ]
     }

@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+final class SearchViewController: ASListController {
     
     private let searchController = UISearchController()
     
     private let emptyStateLabel: UILabel = {
         let label = UILabel()
-        label.text = "What are you looking for? 🧐"
+        label.text = "🧐 What are you looking for?"
         label.textAlignment = .center
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,14 +22,6 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
     
     private var searchResults: [SearchResult] = []
     private var timer: Timer?
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +41,36 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
         return searchResultCell
     }
     
+    private func configureSearchController() {
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for an app"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    private func configureViewController() {
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.reuseIdentifier)
+                
+        configureSearchController()
+        
+        collectionView.addSubview(emptyStateLabel)
+        
+        NSLayoutConstraint.activate([
+            emptyStateLabel.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 80),
+            emptyStateLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+        ])
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 265)
     }
+}
 
+extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: add loading view animation
         timer?.invalidate()
@@ -69,27 +87,4 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
             }
         }
     }
-    
-    private func configureSearchController() {
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for an app"
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-    }
-    
-    private func configureViewController() {
-        collectionView.backgroundColor = .systemBackground
-        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.reuseIdentifier)
-                
-        configureSearchController()
-        
-        view.addSubview(emptyStateLabel)
-        
-        NSLayoutConstraint.activate([
-            emptyStateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyStateLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-    }
-
 }
