@@ -25,14 +25,13 @@ final class AppsViewController: ASListController {
     }
     
     private func configureViewController() {
-        collectionView.backgroundColor = .systemYellow
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: AppsGroupCell.reuseIdentifier)
     }
 }
 
 extension AppsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 265)
+        return CGSize(width: view.frame.width, height: 275)
     }
 }
-

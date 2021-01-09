@@ -11,7 +11,7 @@ final class AppsGroupCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsGroupCell"
     
-    private let titleLabel = UILabel()
+    private let titleLabel = ASTitleLabel(text: "App Name", size: 30)
     private let horizontalViewController = AppsHorizontalViewController()
     
     override init(frame: CGRect) {
@@ -24,16 +24,9 @@ final class AppsGroupCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureLabel() {
-        titleLabel.text = "Apps Section"
-        titleLabel.font = .boldSystemFont(ofSize: 30)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
     private func configureCell() {
-        backgroundColor = .systemPurple
+//        backgroundColor = .systemPurple
         
-        configureLabel()
         addSubview(titleLabel)
         
         horizontalViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +34,7 @@ final class AppsGroupCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
             
             horizontalViewController.view.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),

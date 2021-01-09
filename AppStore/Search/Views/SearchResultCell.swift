@@ -12,11 +12,11 @@ final class SearchResultCell: UICollectionViewCell {
     
     static let reuseIdentifier = "SearchResultCell"
     
-    private let appIconImageView = UIImageView()
+    private let appIconImageView = ASAppIconImageView(width: 64, height: 64)
     private let nameLabel = UILabel()
     private let categoryLabel = UILabel()
     private let ratingsLabel = UILabel()
-    private let getButton = UIButton(type: .system)
+    private let getButton = ASGetButton(type: .system)
     private lazy var screenshotImageView0 = self.createScreenshotImageView()
     private lazy var screenshotImageView1 = self.createScreenshotImageView()
     private lazy var screenshotImageView2 = self.createScreenshotImageView()
@@ -49,26 +49,10 @@ final class SearchResultCell: UICollectionViewCell {
         }
     }
     
-    private func configureAppIconImageView() {
-//        appIconImageView.backgroundColor = .systemRed
-        appIconImageView.layer.cornerRadius = 12
-        appIconImageView.clipsToBounds = true
-        appIconImageView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
     private func configureLabels() {
         nameLabel.text = "APP NAME"
         categoryLabel.text = "Photos & Video"
         ratingsLabel.text = "9.26M"
-    }
-    
-    private func configureGetButton() {
-        getButton.backgroundColor = .systemGray4
-        getButton.setTitle("GET", for: .normal)
-        getButton.layer.cornerRadius = 16
-        getButton.setTitleColor(.systemBlue, for: .normal)
-        getButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        getButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func createScreenshotImageView() -> UIImageView {
@@ -83,14 +67,10 @@ final class SearchResultCell: UICollectionViewCell {
     
     private func configureCell() {
 //        backgroundColor = .systemGreen
-        
-        configureAppIconImageView()
-        
+                
         configureLabels()
         let labelStackView = UIStackView(arrangedSubviews: [nameLabel, categoryLabel, ratingsLabel])
         labelStackView.axis = .vertical
-        
-        configureGetButton()
         
         let infoStackView = UIStackView(arrangedSubviews: [appIconImageView, labelStackView, getButton])
         infoStackView.alignment = .center
@@ -108,15 +88,9 @@ final class SearchResultCell: UICollectionViewCell {
         addSubview(containerStackView)
         
         NSLayoutConstraint.activate([
-            appIconImageView.widthAnchor.constraint(equalToConstant: 64),
-            appIconImageView.heightAnchor.constraint(equalToConstant: 64),
-            
-            getButton.widthAnchor.constraint(equalToConstant: 80),
-            getButton.heightAnchor.constraint(equalToConstant: 32),
-            
             containerStackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            containerStackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
-            containerStackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            containerStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            containerStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             containerStackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor)
         ])
     }
