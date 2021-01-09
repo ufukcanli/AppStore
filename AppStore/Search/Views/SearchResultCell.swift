@@ -50,7 +50,7 @@ final class SearchResultCell: UICollectionViewCell {
     }
     
     private func configureAppIconImageView() {
-        appIconImageView.backgroundColor = .systemRed
+//        appIconImageView.backgroundColor = .systemRed
         appIconImageView.layer.cornerRadius = 12
         appIconImageView.clipsToBounds = true
         appIconImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ final class SearchResultCell: UICollectionViewCell {
     
     private func createScreenshotImageView() -> UIImageView {
         let screenshotImageView = UIImageView()
-        screenshotImageView.backgroundColor = .systemBlue
+//        screenshotImageView.backgroundColor = .systemBlue
         screenshotImageView.layer.cornerRadius = 8
         screenshotImageView.layer.borderWidth = 0.5
         screenshotImageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor

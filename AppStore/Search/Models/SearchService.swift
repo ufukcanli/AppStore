@@ -5,7 +5,7 @@
 //  Created by Ufuk Canlı on 8.01.2021.
 //
 
-import UIKit
+import Foundation
 
 final class SearchService {
     
@@ -15,9 +15,9 @@ final class SearchService {
     
     private init() {}
     
-    func fetchApps(completion: @escaping (Result<ResultArray, ASError>) -> Void) {
-            
-        let endpoint = "\(baseURL)/search?term=instagram&entity=software"
+    func fetchApps(searchTerm: String, completion: @escaping (Result<ResultArray, ASError>) -> Void) {
+        
+        let endpoint = "\(baseURL)/search?term=\(searchTerm)&entity=software"
         
         guard let url = URL(string: endpoint) else {
             completion(.failure(.invalidRequest))
