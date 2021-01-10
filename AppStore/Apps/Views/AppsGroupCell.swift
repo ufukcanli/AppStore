@@ -11,7 +11,7 @@ final class AppsGroupCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsGroupCell"
     
-    private let titleLabel = ASTitleLabel(text: "App Name", size: 30)
+    private let titleLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 28))
     private let horizontalViewController = AppsHorizontalViewController()
     
     override init(frame: CGRect) {

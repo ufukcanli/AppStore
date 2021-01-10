@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: ASListController {
+final class SearchViewController: ASListViewController {
     
     private let searchController = UISearchController()
     

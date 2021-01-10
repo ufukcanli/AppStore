@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AppsHorizontalViewController: ASListController {
+final class AppsHorizontalViewController: ASListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +20,16 @@ final class AppsHorizontalViewController: ASListController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let appRowCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppRowCell.reuseIdentifier, for: indexPath) as! AppRowCell
-        return appRowCell
+        let appsItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsItemCell.reuseIdentifier, for: indexPath) as! AppsItemCell
+        return appsItemCell
     }
     
     private func configureViewController() {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: AppRowCell.reuseIdentifier)
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
+        collectionView.register(AppsItemCell.self, forCellWithReuseIdentifier: AppsItemCell.reuseIdentifier)
+        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.scrollDirection = .horizontal
         }
     }
 }

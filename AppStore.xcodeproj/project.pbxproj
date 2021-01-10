@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2CC9E9D25AA0B82008C1654 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9E9C25AA0B82008C1654 /* AppRowCell.swift */; };
+		D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */; };
+		D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */; };
+		D25E9CAA25AB0A3B001B74D6 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */; };
+		D2CC9E9D25AA0B82008C1654 /* AppsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9E9C25AA0B82008C1654 /* AppsItemCell.swift */; };
 		D2CC9EA125AA1087008C1654 /* ASTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9EA025AA1087008C1654 /* ASTitleLabel.swift */; };
 		D2CC9EA625AA12BF008C1654 /* ASGetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9EA525AA12BF008C1654 /* ASGetButton.swift */; };
 		D2CC9EAB25AA151A008C1654 /* ASAppIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9EAA25AA151A008C1654 /* ASAppIconImageView.swift */; };
@@ -19,7 +22,7 @@
 		D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8C625A87D1D002F344F /* SearchViewController.swift */; };
 		D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */; };
 		D2E965F325A9CEB400FDCF30 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E965F225A9CEB400FDCF30 /* AppsViewController.swift */; };
-		D2E965F825A9D00B00FDCF30 /* ASListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E965F725A9D00B00FDCF30 /* ASListController.swift */; };
+		D2E965F825A9D00B00FDCF30 /* ASListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E965F725A9D00B00FDCF30 /* ASListViewController.swift */; };
 		D2E965FC25A9D42400FDCF30 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E965FB25A9D42400FDCF30 /* AppsGroupCell.swift */; };
 		D2E965FF25A9DB5500FDCF30 /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E965FE25A9DB5500FDCF30 /* AppsHorizontalViewController.swift */; };
 		D2FE7A9225A8D28B000238B1 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7A9125A8D28B000238B1 /* SearchService.swift */; };
@@ -29,7 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D2CC9E9C25AA0B82008C1654 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
+		D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
+		D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalViewController.swift; sourceTree = "<group>"; };
+		D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		D2CC9E9C25AA0B82008C1654 /* AppsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsItemCell.swift; sourceTree = "<group>"; };
 		D2CC9EA025AA1087008C1654 /* ASTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTitleLabel.swift; sourceTree = "<group>"; };
 		D2CC9EA525AA12BF008C1654 /* ASGetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetButton.swift; sourceTree = "<group>"; };
 		D2CC9EAA25AA151A008C1654 /* ASAppIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASAppIconImageView.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		D2E6E8C625A87D1D002F344F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D2E6E8CA25A881FF002F344F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		D2E965F225A9CEB400FDCF30 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
-		D2E965F725A9D00B00FDCF30 /* ASListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASListController.swift; sourceTree = "<group>"; };
+		D2E965F725A9D00B00FDCF30 /* ASListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASListViewController.swift; sourceTree = "<group>"; };
 		D2E965FB25A9D42400FDCF30 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		D2E965FE25A9DB5500FDCF30 /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
 		D2FE7A9125A8D28B000238B1 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D25E9CA425AAE396001B74D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */,
+				D2E965FE25A9DB5500FDCF30 /* AppsHorizontalViewController.swift */,
+				D2E965F225A9CEB400FDCF30 /* AppsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D2CC9E9F25AA105D008C1654 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +139,7 @@
 			children = (
 				D2E965F025A9CDF200FDCF30 /* Models */,
 				D2E965F125A9CDF700FDCF30 /* Views */,
-				D2E965F225A9CEB400FDCF30 /* AppsViewController.swift */,
-				D2E965FE25A9DB5500FDCF30 /* AppsHorizontalViewController.swift */,
+				D25E9CA425AAE396001B74D6 /* Controllers */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -139,8 +154,10 @@
 		D2E965F125A9CDF700FDCF30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */,
+				D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */,
 				D2E965FB25A9D42400FDCF30 /* AppsGroupCell.swift */,
-				D2CC9E9C25AA0B82008C1654 /* AppRowCell.swift */,
+				D2CC9E9C25AA0B82008C1654 /* AppsItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
-				D2E965F725A9D00B00FDCF30 /* ASListController.swift */,
+				D2E965F725A9D00B00FDCF30 /* ASListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,16 +304,19 @@
 				D2FE7A9225A8D28B000238B1 /* SearchService.swift in Sources */,
 				D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */,
 				D2E965FF25A9DB5500FDCF30 /* AppsHorizontalViewController.swift in Sources */,
+				D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */,
 				D2E965FC25A9D42400FDCF30 /* AppsGroupCell.swift in Sources */,
 				D2FE7A9925A8D68C000238B1 /* SearchResult.swift in Sources */,
 				D2CC9EA125AA1087008C1654 /* ASTitleLabel.swift in Sources */,
 				D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */,
 				D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */,
-				D2E965F825A9D00B00FDCF30 /* ASListController.swift in Sources */,
+				D2E965F825A9D00B00FDCF30 /* ASListViewController.swift in Sources */,
+				D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */,
 				D2E965F325A9CEB400FDCF30 /* AppsViewController.swift in Sources */,
 				D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */,
-				D2CC9E9D25AA0B82008C1654 /* AppRowCell.swift in Sources */,
+				D2CC9E9D25AA0B82008C1654 /* AppsItemCell.swift in Sources */,
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
+				D25E9CAA25AB0A3B001B74D6 /* AppsHeaderCell.swift in Sources */,
 				D2CC9EA625AA12BF008C1654 /* ASGetButton.swift in Sources */,
 				D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */,
 				D2CC9EAB25AA151A008C1654 /* ASAppIconImageView.swift in Sources */,

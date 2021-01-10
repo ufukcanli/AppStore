@@ -1,5 +1,5 @@
 //
-//  ASListController.swift
+//  ASListViewController.swift
 //  AppStore
 //
 //  Created by Ufuk Canlı on 9.01.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ASListController: UICollectionViewController {
+class ASListViewController: UICollectionViewController {
 
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())

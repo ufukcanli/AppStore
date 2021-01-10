@@ -19,13 +19,14 @@ final class ASTitleLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(text: String, size: CGFloat) {
+    convenience init(text: String, font: UIFont) {
         self.init(frame: .zero)
         self.text = text
-        self.font = .boldSystemFont(ofSize: size)
+        self.font = font
     }
     
     private func configureCell() {
         translatesAutoresizingMaskIntoConstraints = false
+        numberOfLines = 0
     }
 }

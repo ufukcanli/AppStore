@@ -1,5 +1,5 @@
 //
-//  AppRowCell.swift
+//  AppsItemCell.swift
 //  AppStore
 //
 //  Created by Ufuk Canlı on 9.01.2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class AppRowCell: UICollectionViewCell {
+final class AppsItemCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "AppRowCell"
+    static let reuseIdentifier = "AppsItemCell"
     
     private let imageView = ASAppIconImageView(width: 64, height: 64)
-    private let nameLabel = ASTitleLabel(text: "App Name", size: 16)
-    private let companyLabel = ASTitleLabel(text: "Company Name", size: 13)
+    private let nameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 16))
+    private let companyLabel = ASTitleLabel(text: "Company Name", font: .systemFont(ofSize: 13))
     private let getButton = ASGetButton(type: .system)
         
     override init(frame: CGRect) {
