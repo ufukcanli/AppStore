@@ -27,6 +27,6 @@ final class ASTitleLabel: UILabel {
     
     private func configureCell() {
         translatesAutoresizingMaskIntoConstraints = false
-        numberOfLines = 0
+        numberOfLines = 2
     }
 }

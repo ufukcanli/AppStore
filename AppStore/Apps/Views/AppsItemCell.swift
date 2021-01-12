@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class AppsItemCell: UICollectionViewCell {
     
@@ -24,6 +25,12 @@ final class AppsItemCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func updateCell(withApp app: FeedResult) {
+        nameLabel.text = app.name
+        companyLabel.text = app.artistName
+        imageView.sd_setImage(with: URL(string: app.artworkUrl100))
     }
     
     private func configureCell() {

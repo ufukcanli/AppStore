@@ -8,6 +8,8 @@
 import UIKit
 
 final class AppsHorizontalViewController: ASListViewController {
+    
+    public var appsWeLove: AppsGroup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,11 +18,14 @@ final class AppsHorizontalViewController: ASListViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let appsWeLove = appsWeLove else { return 0 }
+        return appsWeLove.feed.results.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let appsItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsItemCell.reuseIdentifier, for: indexPath) as! AppsItemCell
+        guard let appsWeLove = appsWeLove else { return appsItemCell }
+        appsItemCell.updateCell(withApp: appsWeLove.feed.results[indexPath.item])
         return appsItemCell
     }
     

@@ -24,6 +24,12 @@ final class AppsGroupCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func updateCell(withTitle title: String, appsWeLove: AppsGroup) {
+        titleLabel.text = title
+        horizontalViewController.appsWeLove = appsWeLove
+        horizontalViewController.collectionView.reloadData()
+    }
+    
     private func configureCell() {
 //        backgroundColor = .systemPurple
         
