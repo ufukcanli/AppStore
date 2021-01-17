@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ASAppIconImageView: UIImageView {
+class ASAppIconImageView: UIImageView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +27,7 @@ final class ASAppIconImageView: UIImageView {
         ])
     }
     
-    private func configureImageView() {
+    func configureImageView() {
         backgroundColor = .systemRed
         layer.cornerRadius = 12
         clipsToBounds = true

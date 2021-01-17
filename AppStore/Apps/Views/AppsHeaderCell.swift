@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class AppsHeaderCell: UICollectionViewCell {
+class AppsHeaderCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsHeaderCell"
     
-    private let companyLabel = ASTitleLabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
-    private let titleLabel = ASTitleLabel(text: "Keeping up with friends faster than ever", font: .systemFont(ofSize: 26))
-    private let imageView = UIImageView()
+    let companyLabel = ASTitleLabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
+    let titleLabel = ASTitleLabel(text: "Keeping up with friends faster than ever", font: .systemFont(ofSize: 26))
+    let imageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ final class AppsHeaderCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureCell() {
+    func configureCell() {
         backgroundColor = .systemBackground
         
         companyLabel.textColor = .systemBlue

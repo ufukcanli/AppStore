@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ASGetButton: UIButton {
+class ASGetButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +19,7 @@ final class ASGetButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureButton() {
+    func configureButton() {
         backgroundColor = .systemGray4
         setTitle("GET", for: .normal)
         layer.cornerRadius = 16

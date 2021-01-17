@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class AppsHeaderView: UICollectionReusableView {
+class AppsHeaderView: UICollectionReusableView {
     
     static let reuseIdentifier = "AppsHeaderView"
     
-    private let appsHeaderHorizontalViewController = AppsHeaderHorizontalViewController()
+    let appsHeaderHorizontalViewController = AppsHeaderHorizontalViewController()
       
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,7 @@ final class AppsHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureHeaderView() {
+    func configureHeaderView() {
         backgroundColor = .systemBackground
         
         appsHeaderHorizontalViewController.view.translatesAutoresizingMaskIntoConstraints = false

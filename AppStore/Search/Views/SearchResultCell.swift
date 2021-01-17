@@ -8,18 +8,18 @@
 import UIKit
 import SDWebImage
 
-final class SearchResultCell: UICollectionViewCell {
+class SearchResultCell: UICollectionViewCell {
     
     static let reuseIdentifier = "SearchResultCell"
     
-    private let appIconImageView = ASAppIconImageView(width: 64, height: 64)
-    private let nameLabel = UILabel()
-    private let categoryLabel = UILabel()
-    private let ratingsLabel = UILabel()
-    private let getButton = ASGetButton(type: .system)
-    private lazy var screenshotImageView0 = self.createScreenshotImageView()
-    private lazy var screenshotImageView1 = self.createScreenshotImageView()
-    private lazy var screenshotImageView2 = self.createScreenshotImageView()
+    let appIconImageView = ASAppIconImageView(width: 64, height: 64)
+    let nameLabel = UILabel()
+    let categoryLabel = UILabel()
+    let ratingsLabel = UILabel()
+    let getButton = ASGetButton(type: .system)
+    lazy var screenshotImageView0 = self.createScreenshotImageView()
+    lazy var screenshotImageView1 = self.createScreenshotImageView()
+    lazy var screenshotImageView2 = self.createScreenshotImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,13 +49,13 @@ final class SearchResultCell: UICollectionViewCell {
         }
     }
     
-    private func configureLabels() {
+    func configureLabels() {
         nameLabel.text = "APP NAME"
         categoryLabel.text = "Photos & Video"
         ratingsLabel.text = "9.26M"
     }
     
-    private func createScreenshotImageView() -> UIImageView {
+    func createScreenshotImageView() -> UIImageView {
         let screenshotImageView = UIImageView()
 //        screenshotImageView.backgroundColor = .systemBlue
         screenshotImageView.layer.cornerRadius = 8
@@ -65,7 +65,7 @@ final class SearchResultCell: UICollectionViewCell {
         return screenshotImageView
     }
     
-    private func configureCell() {
+    func configureCell() {
 //        backgroundColor = .systemGreen
                 
         configureLabels()

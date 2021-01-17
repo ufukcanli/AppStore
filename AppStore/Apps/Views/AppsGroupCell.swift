@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class AppsGroupCell: UICollectionViewCell {
+class AppsGroupCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsGroupCell"
     
-    private let titleLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 28))
-    private let horizontalViewController = AppsHorizontalViewController()
+    let titleLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 28))
+    let horizontalViewController = AppsHorizontalViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,13 +24,13 @@ final class AppsGroupCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func updateCell(withTitle title: String, appsWeLove: AppsGroup) {
+    func updateCell(withTitle title: String, appsWeLove: AppsGroup) {
         titleLabel.text = title
         horizontalViewController.appsWeLove = appsWeLove
         horizontalViewController.collectionView.reloadData()
     }
     
-    private func configureCell() {
+    func configureCell() {
 //        backgroundColor = .systemPurple
         
         addSubview(titleLabel)

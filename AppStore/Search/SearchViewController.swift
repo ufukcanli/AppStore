@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class SearchViewController: ASListViewController {
+class SearchViewController: ASListViewController {
     
-    private let searchController = UISearchController()
+    let searchController = UISearchController()
     
-    private let emptyStateLabel: UILabel = {
+    let emptyStateLabel: UILabel = {
         let label = UILabel()
         label.text = "🧐 What are you looking for?"
         label.textAlignment = .center
@@ -20,8 +20,8 @@ final class SearchViewController: ASListViewController {
         return label
     }()
     
-    private var searchResults: [SearchResult] = []
-    private var timer: Timer?
+    var searchResults: [SearchResult] = []
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ final class SearchViewController: ASListViewController {
         return searchResultCell
     }
     
-    private func configureSearchController() {
+    func configureSearchController() {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for an app"
         searchController.obscuresBackgroundDuringPresentation = false
@@ -49,7 +49,7 @@ final class SearchViewController: ASListViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    private func configureViewController() {
+    func configureViewController() {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.reuseIdentifier)
                 

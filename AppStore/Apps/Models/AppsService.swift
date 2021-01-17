@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class AppsService {
+class AppsService {
     
     static let shared = AppsService()
     
-    private let baseURL = "https://rss.itunes.apple.com"
+    let baseURL = "https://rss.itunes.apple.com"
     
     private init() {}
     

@@ -8,14 +8,14 @@
 import UIKit
 import SDWebImage
 
-final class AppsItemCell: UICollectionViewCell {
+class AppsItemCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsItemCell"
     
-    private let imageView = ASAppIconImageView(width: 64, height: 64)
-    private let nameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 16))
-    private let companyLabel = ASTitleLabel(text: "Company Name", font: .systemFont(ofSize: 13))
-    private let getButton = ASGetButton(type: .system)
+    let imageView = ASAppIconImageView(width: 64, height: 64)
+    let nameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 16))
+    let companyLabel = ASTitleLabel(text: "Company Name", font: .systemFont(ofSize: 13))
+    let getButton = ASGetButton(type: .system)
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,13 +27,13 @@ final class AppsItemCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func updateCell(withApp app: FeedResult) {
+    func updateCell(withApp app: FeedResult) {
         nameLabel.text = app.name
         companyLabel.text = app.artistName
         imageView.sd_setImage(with: URL(string: app.artworkUrl100))
     }
     
-    private func configureCell() {
+    func configureCell() {
 //        backgroundColor = .systemOrange
         
         let labelStackView = UIStackView(arrangedSubviews: [nameLabel, companyLabel])

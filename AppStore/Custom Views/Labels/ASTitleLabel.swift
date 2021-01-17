@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ASTitleLabel: UILabel {
+class ASTitleLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ final class ASTitleLabel: UILabel {
         self.font = font
     }
     
-    private func configureCell() {
+    func configureCell() {
         translatesAutoresizingMaskIntoConstraints = false
         numberOfLines = 2
     }
