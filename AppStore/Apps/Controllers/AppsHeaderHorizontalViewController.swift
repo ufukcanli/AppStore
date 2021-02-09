@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AppsHeaderHorizontalViewController: ASListViewController {
+class AppsHeaderHorizontalViewController: ASListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ final class AppsHeaderHorizontalViewController: ASListViewController {
         return appsHeaderCell
     }
 
-    private func configureViewController() {
+    func configureViewController() {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
 //        collectionView.isPagingEnabled = true

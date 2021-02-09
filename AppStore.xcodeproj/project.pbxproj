@@ -171,8 +171,8 @@
 		D2E965F625A9CF7C00FDCF30 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				D2CC9EA425AA12A2008C1654 /* Buttons */,
 				D2CC9E9F25AA105D008C1654 /* Labels */,
+				D2CC9EA425AA12A2008C1654 /* Buttons */,
 				D2FE7AA825A8FDE1000238B1 /* Controllers */,
 				D2CC9EA925AA14BC008C1654 /* ImageViews */,
 			);

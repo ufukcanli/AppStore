@@ -11,15 +11,28 @@ class AppsService {
     
     static let shared = AppsService()
     
-    let baseURL = "https://rss.itunes.apple.com"
+    let baseURL = "https://rss.itunes.apple.com/api/v1"
     
     private init() {}
     
-    func fetchApps(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
+    func fetchAppsWeLove(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
+        let urlString = "\(baseURL)/us/ios-apps/new-apps-we-love/all/25/explicit.json"
+        fetchAppsGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchTopGrossing(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
+        let urlString = "\(baseURL)/us/ios-apps/top-grossing/all/25/explicit.json"
+        fetchAppsGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchTopFree(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
+        let urlString = "\(baseURL)/us/ios-apps/top-free/all/25/explicit.json"
+        fetchAppsGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchAppsGroup(urlString: String, completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
         
-        let endpoint = "\(baseURL)/api/v1/us/ios-apps/new-apps-we-love/all/25/explicit.json"
-        
-        guard let url = URL(string: endpoint) else {
+        guard let url = URL(string: urlString) else {
             completion(.failure(.invalidRequest))
             return
         }

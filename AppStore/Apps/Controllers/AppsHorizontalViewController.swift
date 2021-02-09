@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class AppsHorizontalViewController: ASListViewController {
+class AppsHorizontalViewController: ASListViewController {
     
-    public var appsWeLove: AppsGroup?
+    var appsGroup: AppsGroup?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,18 +18,18 @@ final class AppsHorizontalViewController: ASListViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let appsWeLove = appsWeLove else { return 0 }
-        return appsWeLove.feed.results.count
+        guard let appsGroup = appsGroup else { return 0 }
+        return appsGroup.feed.results.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let appsItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsItemCell.reuseIdentifier, for: indexPath) as! AppsItemCell
-        guard let appsWeLove = appsWeLove else { return appsItemCell }
-        appsItemCell.updateCell(withApp: appsWeLove.feed.results[indexPath.item])
+        guard let appsGroup = appsGroup else { return appsItemCell }
+        appsItemCell.updateCell(withApp: appsGroup.feed.results[indexPath.item])
         return appsItemCell
     }
     
-    private func configureViewController() {
+    func configureViewController() {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(AppsItemCell.self, forCellWithReuseIdentifier: AppsItemCell.reuseIdentifier)

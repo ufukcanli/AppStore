@@ -11,7 +11,7 @@ class AppsGroupCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsGroupCell"
     
-    let titleLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 28))
+    let titleLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 24))
     let horizontalViewController = AppsHorizontalViewController()
     
     override init(frame: CGRect) {
@@ -24,9 +24,9 @@ class AppsGroupCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateCell(withTitle title: String, appsWeLove: AppsGroup) {
+    func updateCell(withTitle title: String, appsGroup: AppsGroup) {
         titleLabel.text = title
-        horizontalViewController.appsWeLove = appsWeLove
+        horizontalViewController.appsGroup = appsGroup
         horizontalViewController.collectionView.reloadData()
     }
     
