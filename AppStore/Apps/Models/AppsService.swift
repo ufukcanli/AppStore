@@ -35,7 +35,7 @@ final class AppsService {
         }
     }
     
-    private func taskForGetRequest<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping (Result<T, ASError>) -> Void) {
+    private func taskForGetRequest<T: Decodable>(url: URL, completion: @escaping (Result<T, ASError>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let _ = error {
                 completion(.failure(.unableToComplete))
@@ -64,18 +64,18 @@ final class AppsService {
     }
     
     func fetchAppsWeLove(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
-        taskForGetRequest(url: Endpoints.getAppsWeLove.url, responseType: AppsGroup.self, completion: completion)
+        taskForGetRequest(url: Endpoints.getAppsWeLove.url, completion: completion)
     }
     
     func fetchTopGrossing(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
-        taskForGetRequest(url: Endpoints.getTopGrossing.url, responseType: AppsGroup.self, completion: completion)
+        taskForGetRequest(url: Endpoints.getTopGrossing.url, completion: completion)
     }
     
     func fetchTopFree(completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
-        taskForGetRequest(url: Endpoints.getTopFreeApps.url, responseType: AppsGroup.self, completion: completion)
+        taskForGetRequest(url: Endpoints.getTopFreeApps.url, completion: completion)
     }
     
     func fetchAppsSocial(completion: @escaping (Result<[AppsSocial], ASError>) -> Void) {
-        taskForGetRequest(url: Endpoints.getAppsSocial.url, responseType: [AppsSocial].self, completion: completion)
+        taskForGetRequest(url: Endpoints.getAppsSocial.url, completion: completion)
     }
 }
