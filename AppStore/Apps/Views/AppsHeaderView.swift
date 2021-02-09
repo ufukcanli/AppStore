@@ -23,6 +23,11 @@ class AppsHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateHeader(appsSocial: [AppsSocial]) {
+        appsHeaderHorizontalViewController.appsSocial = appsSocial
+        appsHeaderHorizontalViewController.collectionView.reloadData()
+    }
+    
     func configureHeaderView() {
         backgroundColor = .systemBackground
         

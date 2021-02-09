@@ -9,13 +9,15 @@ import UIKit
 
 class AppsViewController: ASListViewController {
     
+    let activityIndicatorView = UIActivityIndicatorView(style: .large)
+    
     var appsGroup = [AppsGroup]()
+    var appsSocial = [AppsSocial]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureViewController()
-        
         fetchData()
     }
     
@@ -62,8 +64,22 @@ class AppsViewController: ASListViewController {
             }
         }
         
+        dispatchGroup.enter()
+        AppsService.shared.fetchAppsSocial { [weak self] result in
+            guard let self = self else { return }
+            dispatchGroup.leave()
+            print("Done: fetchAppsSocial")
+            switch result {
+            case .success(let appsSocial):
+                self.appsSocial = appsSocial
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
         dispatchGroup.notify(queue: .main) {
             print("Completed!")
+            self.activityIndicatorView.stopAnimating()
             if let group1 = group1 { self.appsGroup.append(group1) }
             if let group2 = group2 { self.appsGroup.append(group2) }
             if let group3 = group3 { self.appsGroup.append(group3) }
@@ -75,6 +91,18 @@ class AppsViewController: ASListViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: AppsGroupCell.reuseIdentifier)
         collectionView.register(AppsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AppsHeaderView.reuseIdentifier)
+        
+        activityIndicatorView.color = .systemBlue
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        
+        collectionView.addSubview(activityIndicatorView)
+        
+        NSLayoutConstraint.activate([
+            activityIndicatorView.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 100),
+            activityIndicatorView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+        ])
     }
 }
 
@@ -93,6 +121,7 @@ extension AppsViewController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let appsHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppsHeaderView.reuseIdentifier, for: indexPath) as! AppsHeaderView
+        appsHeaderView.updateHeader(appsSocial: appsSocial)
         return appsHeaderView
     }
 }
@@ -100,7 +129,7 @@ extension AppsViewController {
 extension AppsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 0)
+        return CGSize(width: view.frame.width, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

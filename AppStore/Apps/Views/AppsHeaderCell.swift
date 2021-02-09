@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsHeaderCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsHeaderCell"
     
-    let companyLabel = ASTitleLabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
+    let companyLabel = ASTitleLabel(text: "COMPANY NAME", font: .boldSystemFont(ofSize: 12))
     let titleLabel = ASTitleLabel(text: "Keeping up with friends faster than ever", font: .systemFont(ofSize: 26))
     let imageView = UIImageView()
     
@@ -25,11 +26,18 @@ class AppsHeaderCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateCell(appsSocialItem: AppsSocial) {
+        companyLabel.text = appsSocialItem.name
+        titleLabel.text = appsSocialItem.tagline
+        imageView.sd_setImage(with: URL(string: appsSocialItem.imageURL))
+    }
+    
     func configureCell() {
         backgroundColor = .systemBackground
         
         companyLabel.textColor = .systemBlue
         
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemRed
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true

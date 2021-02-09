@@ -31,7 +31,7 @@ class AppsService {
     }
     
     func fetchAppsGroup(urlString: String, completion: @escaping (Result<AppsGroup, ASError>) -> Void) {
-        
+
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidRequest))
             return
@@ -65,4 +65,39 @@ class AppsService {
         task.resume()
     }
     
+    func fetchAppsSocial(completion: @escaping (Result<[AppsSocial], ASError>) -> Void) {
+        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.invalidRequest))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completion(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let appsSocial = try decoder.decode([AppsSocial].self, from: data)
+                completion(.success(appsSocial))
+            } catch {
+                completion(.failure(.invalidData))
+            }
+        }
+        
+        task.resume()
+    }
 }
