@@ -13,7 +13,7 @@ class AppsDetailCell: UICollectionViewCell {
     
     let appIconImageView = ASAppIconImageView(width: 140, height: 140)
     let appNameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 23))
-    let appPriceButton = ASGetButton(backgroundColor: .customBlue, title: "$4.99")
+    let appPriceButton = ASGetButton(backgroundColor: .customBlue, title: "$4.99", color: .white)
     let whatsNewLabel = ASTitleLabel(text: "What's New", font: .boldSystemFont(ofSize: 18))
     let releaseNotes = ASBodyLabel(frame: .zero)
     
@@ -37,8 +37,10 @@ class AppsDetailCell: UICollectionViewCell {
         
         let labelAndButtonStackView = UIStackView(arrangedSubviews: [appNameLabel, buttonStackView])
         labelAndButtonStackView.axis = .vertical
+        labelAndButtonStackView.spacing = 10
         
         let appInfoStackView = UIStackView(arrangedSubviews: [appIconImageView, labelAndButtonStackView])
+        appInfoStackView.alignment = .top
         appInfoStackView.spacing = 20
         
         let containerStackView = UIStackView(arrangedSubviews: [appInfoStackView, whatsNewLabel, releaseNotes])

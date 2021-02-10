@@ -12,14 +12,15 @@ class SearchResultCell: UICollectionViewCell {
     
     static let reuseIdentifier = "SearchResultCell"
     
-    let appIconImageView = ASAppIconImageView(width: 64, height: 64)
-    let getButton = ASGetButton(backgroundColor: .customGray, title: "GET")
-    let nameLabel = UILabel()
-    let categoryLabel = UILabel()
-    let ratingsLabel = UILabel()
     lazy var screenshotImageView0 = self.createScreenshotImageView()
     lazy var screenshotImageView1 = self.createScreenshotImageView()
     lazy var screenshotImageView2 = self.createScreenshotImageView()
+    
+    let appIconImageView = ASAppIconImageView(width: 64, height: 64)
+    let getButton = ASGetButton(backgroundColor: .customGray, title: "GET", color: .systemBlue)
+    let nameLabel = UILabel()
+    let categoryLabel = UILabel()
+    let ratingsLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
