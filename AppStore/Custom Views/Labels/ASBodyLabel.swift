@@ -21,11 +21,12 @@ class ASBodyLabel: UILabel {
     
     func configureLabel() {
         textAlignment = .left
-        textColor = .secondaryLabel
+        textColor = .darkText
         font = .preferredFont(forTextStyle: .body)
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping
+        numberOfLines = 0
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

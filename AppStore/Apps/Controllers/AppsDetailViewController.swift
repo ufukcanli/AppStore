@@ -10,6 +10,7 @@ import UIKit
 class AppsDetailViewController: ASListViewController {
     
     var appId: String!
+    var app: SearchResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +21,17 @@ class AppsDetailViewController: ASListViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("Here is my app id: \(appId!)")
+        fetchAppDetailInfo()
+    }
+    
+    func fetchAppDetailInfo() {
         let url = URL(string: "https://itunes.apple.com/lookup?id=\(appId!)")!
-        AppsService.shared.taskForGetRequest(url: url) { (result: Result<ResultArray, ASError>) in
+        AppsService.shared.taskForGetRequest(url: url) { [weak self] (result: Result<ResultArray, ASError>) in
+            guard let self = self else { return }
             switch result {
             case .success(let resultArray):
-                print(resultArray.results.first?.releaseNotes as Any)
+                self.app = resultArray.results.first
+                DispatchQueue.main.async { self.collectionView.reloadData() }
             case .failure(let error):
                 print(error)
             }
@@ -46,14 +52,19 @@ extension AppsDetailViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsDetailCell.reuseIdentifier, for: indexPath) as! AppsDetailCell
-        return cell
+        let appsDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsDetailCell.reuseIdentifier, for: indexPath) as! AppsDetailCell
+        if let app = app { appsDetailCell.updateCell(app: app) }
+        return appsDetailCell
     }
 }
 
 extension AppsDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        let dummyCell = AppsDetailCell(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 1000))
+        if let app = app { dummyCell.updateCell(app: app) }
+        dummyCell.layoutIfNeeded()
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: view.frame.width, height: 1000))
+        return CGSize(width: view.frame.width, height: estimatedSize.height)
     }
 }

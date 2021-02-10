@@ -15,7 +15,7 @@ class AppsDetailCell: UICollectionViewCell {
     let appNameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 23))
     let appPriceButton = ASGetButton(backgroundColor: .customBlue, title: "$4.99", color: .white)
     let whatsNewLabel = ASTitleLabel(text: "What's New", font: .boldSystemFont(ofSize: 18))
-    let releaseNotes = ASBodyLabel(frame: .zero)
+    let releaseNotesLabel = ASBodyLabel(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,11 +27,18 @@ class AppsDetailCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateCell(app: SearchResult) {
+        appNameLabel.text = app.trackName
+        releaseNotesLabel.text = app.releaseNotes
+        appIconImageView.sd_setImage(with: URL(string: app.artworkUrl100)!)
+        appPriceButton.setTitle(app.formattedPrice, for: .normal)
+    }
+    
     func configureCell() {
         let padding: CGFloat = 20
         
         appIconImageView.backgroundColor = .systemRed
-        releaseNotes.text = "Release Notes"
+        releaseNotesLabel.text = "Release Notes"
         
         let buttonStackView = UIStackView(arrangedSubviews: [appPriceButton, UIView()])
         
@@ -43,8 +50,10 @@ class AppsDetailCell: UICollectionViewCell {
         appInfoStackView.alignment = .top
         appInfoStackView.spacing = 20
         
-        let containerStackView = UIStackView(arrangedSubviews: [appInfoStackView, whatsNewLabel, releaseNotes])
+        let containerStackView = UIStackView(arrangedSubviews: [appInfoStackView, whatsNewLabel, releaseNotesLabel])
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
+        containerStackView.setCustomSpacing(20, after: appInfoStackView)
+        containerStackView.setCustomSpacing(5, after: whatsNewLabel)
         containerStackView.axis = .vertical
         
         addSubview(containerStackView)
