@@ -113,9 +113,19 @@ extension AppsViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let appsGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell.reuseIdentifier, for: indexPath) as! AppsGroupCell
+        
         let appsGroup = self.appsGroup[indexPath.item]
         appsGroupCell.updateCell(withTitle: appsGroup.feed.title, appsGroup: appsGroup)
+        
+        appsGroupCell.horizontalViewController.didSelectHandler = { [weak self] app in
+            guard let self = self else { return }
+            let detailViewController = AppsDetailViewController()
+            detailViewController.appId = app.id
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+        
         return appsGroupCell
     }
     

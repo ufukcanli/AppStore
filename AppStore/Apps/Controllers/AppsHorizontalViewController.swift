@@ -10,12 +10,25 @@ import UIKit
 class AppsHorizontalViewController: ASListViewController {
     
     var appsGroup: AppsGroup?
+    var didSelectHandler: ((_ app: FeedResult) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureViewController()
     }
+    
+    func configureViewController() {
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(AppsItemCell.self, forCellWithReuseIdentifier: AppsItemCell.reuseIdentifier)
+        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.scrollDirection = .horizontal
+        }
+    }
+}
+
+extension AppsHorizontalViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let appsGroup = appsGroup else { return 0 }
@@ -28,13 +41,13 @@ class AppsHorizontalViewController: ASListViewController {
         appsItemCell.updateCell(withApp: appsGroup.feed.results[indexPath.item])
         return appsItemCell
     }
+}
+
+extension AppsHorizontalViewController {
     
-    func configureViewController() {
-        collectionView.backgroundColor = .systemBackground
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(AppsItemCell.self, forCellWithReuseIdentifier: AppsItemCell.reuseIdentifier)
-        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.scrollDirection = .horizontal
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appsGroup?.feed.results[indexPath.item] {
+            didSelectHandler?(app)
         }
     }
 }

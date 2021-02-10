@@ -13,10 +13,10 @@ class SearchResultCell: UICollectionViewCell {
     static let reuseIdentifier = "SearchResultCell"
     
     let appIconImageView = ASAppIconImageView(width: 64, height: 64)
+    let getButton = ASGetButton(backgroundColor: .customGray, title: "GET")
     let nameLabel = UILabel()
     let categoryLabel = UILabel()
     let ratingsLabel = UILabel()
-    let getButton = ASGetButton(type: .system)
     lazy var screenshotImageView0 = self.createScreenshotImageView()
     lazy var screenshotImageView1 = self.createScreenshotImageView()
     lazy var screenshotImageView2 = self.createScreenshotImageView()

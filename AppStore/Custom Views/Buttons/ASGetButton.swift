@@ -19,17 +19,18 @@ class ASGetButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    convenience init(backgroundColor: UIColor, title: String) {
+        self.init(frame: .zero)
+        self.setTitle(title, for: .normal)
+        self.backgroundColor = backgroundColor
+    }
+    
     func configureButton() {
-        backgroundColor = .systemGray4
-        setTitle("GET", for: .normal)
         layer.cornerRadius = 16
         setTitleColor(.systemBlue, for: .normal)
         titleLabel?.font = .boldSystemFont(ofSize: 14)
         translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            self.widthAnchor.constraint(equalToConstant: 80),
-            self.heightAnchor.constraint(equalToConstant: 32)
-        ])
+        widthAnchor.constraint(equalToConstant: 80).isActive = true
+        heightAnchor.constraint(equalToConstant: 32).isActive = true
     }
 }

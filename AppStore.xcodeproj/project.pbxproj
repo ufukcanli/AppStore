@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */; };
 		D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */; };
 		D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */; };
 		D25E9CAA25AB0A3B001B74D6 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */; };
+		D28E0E3D25D3E74F00B67A2A /* AppsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E0E3C25D3E74F00B67A2A /* AppsDetailCell.swift */; };
+		D28E0E4225D3EBEB00B67A2A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E0E4125D3EBEB00B67A2A /* UIColor+Extension.swift */; };
+		D28E0E4525D3EEF800B67A2A /* ASBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E0E4425D3EEF800B67A2A /* ASBodyLabel.swift */; };
 		D2CC9E9D25AA0B82008C1654 /* AppsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9E9C25AA0B82008C1654 /* AppsItemCell.swift */; };
 		D2CC9EA125AA1087008C1654 /* ASTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9EA025AA1087008C1654 /* ASTitleLabel.swift */; };
 		D2CC9EA625AA12BF008C1654 /* ASGetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC9EA525AA12BF008C1654 /* ASGetButton.swift */; };
@@ -35,9 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
 		D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalViewController.swift; sourceTree = "<group>"; };
 		D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		D28E0E3C25D3E74F00B67A2A /* AppsDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailCell.swift; sourceTree = "<group>"; };
+		D28E0E4125D3EBEB00B67A2A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D28E0E4425D3EEF800B67A2A /* ASBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBodyLabel.swift; sourceTree = "<group>"; };
 		D2CC9E9C25AA0B82008C1654 /* AppsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsItemCell.swift; sourceTree = "<group>"; };
 		D2CC9EA025AA1087008C1654 /* ASTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTitleLabel.swift; sourceTree = "<group>"; };
 		D2CC9EA525AA12BF008C1654 /* ASGetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetButton.swift; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 		D25E9CA425AAE396001B74D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */,
 				D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */,
 				D2E965FE25A9DB5500FDCF30 /* AppsHorizontalViewController.swift */,
 				D2E965F225A9CEB400FDCF30 /* AppsViewController.swift */,
@@ -85,10 +94,19 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D28E0E4025D3EBC700B67A2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D28E0E4125D3EBEB00B67A2A /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D2CC9E9F25AA105D008C1654 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
 				D2CC9EA025AA1087008C1654 /* ASTitleLabel.swift */,
+				D28E0E4425D3EEF800B67A2A /* ASBodyLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -131,6 +149,7 @@
 				D2E965EF25A9CDDB00FDCF30 /* Apps */,
 				D2FE7AA225A8FC68000238B1 /* Search */,
 				D2FE7AA625A8FCE5000238B1 /* Utilities */,
+				D28E0E4025D3EBC700B67A2A /* Extensions */,
 				D2E965F625A9CF7C00FDCF30 /* Custom Views */,
 				D2FE7AA525A8FCD0000238B1 /* Supporting Files */,
 				D2E6E8B325A87009002F344F /* Assets.xcassets */,
@@ -163,6 +182,7 @@
 		D2E965F125A9CDF700FDCF30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D28E0E3C25D3E74F00B67A2A /* AppsDetailCell.swift */,
 				D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */,
 				D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */,
 				D2E965FB25A9D42400FDCF30 /* AppsGroupCell.swift */,
@@ -312,6 +332,7 @@
 			files = (
 				D2DB21AB25D29B52001F9E2B /* AppsSocial.swift in Sources */,
 				D2FE7A9225A8D28B000238B1 /* SearchService.swift in Sources */,
+				D28E0E4525D3EEF800B67A2A /* ASBodyLabel.swift in Sources */,
 				D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */,
 				D2DBD1A325ADBEBF00294D05 /* AppsGroup.swift in Sources */,
 				D2E965FF25A9DB5500FDCF30 /* AppsHorizontalViewController.swift in Sources */,
@@ -319,10 +340,13 @@
 				D2E965FC25A9D42400FDCF30 /* AppsGroupCell.swift in Sources */,
 				D2DBD1A025ADBC9900294D05 /* AppsService.swift in Sources */,
 				D2FE7A9925A8D68C000238B1 /* SearchResult.swift in Sources */,
+				D28E0E4225D3EBEB00B67A2A /* UIColor+Extension.swift in Sources */,
 				D2CC9EA125AA1087008C1654 /* ASTitleLabel.swift in Sources */,
 				D2E6E8AB25A87006002F344F /* AppDelegate.swift in Sources */,
+				D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */,
 				D2E6E8C725A87D1D002F344F /* SearchViewController.swift in Sources */,
 				D2E965F825A9D00B00FDCF30 /* ASListViewController.swift in Sources */,
+				D28E0E3D25D3E74F00B67A2A /* AppsDetailCell.swift in Sources */,
 				D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */,
 				D2E965F325A9CEB400FDCF30 /* AppsViewController.swift in Sources */,
 				D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */,
