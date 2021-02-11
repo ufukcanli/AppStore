@@ -59,6 +59,7 @@ extension AppsDetailViewController {
             return appsDetailCell
         } else {
             let appsPreviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPreviewCell.reuseIdentifier, for: indexPath) as! AppsPreviewCell
+            if let app = app { appsPreviewCell.horizontalViewController.app = app }
             return appsPreviewCell
         }
     }
