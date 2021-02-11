@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppsHeaderHorizontalViewController: ASListViewController {
+class AppsHeaderHorizontalViewController: ASHorizontalSnappingViewController {
     
     var appsSocial = [AppsSocial]()
 
@@ -33,9 +33,7 @@ class AppsHeaderHorizontalViewController: ASListViewController {
         collectionView.showsHorizontalScrollIndicator = false
 //        collectionView.isPagingEnabled = true
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: AppsHeaderCell.reuseIdentifier)
-        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.scrollDirection = .horizontal
-        }
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 
@@ -45,7 +43,7 @@ extension AppsHeaderHorizontalViewController: UICollectionViewDelegateFlowLayout
         return CGSize(width: view.frame.width - 48, height: view.frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+//    }
 }

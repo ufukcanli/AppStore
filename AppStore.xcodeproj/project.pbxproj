@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2036D7A25D52EE8001682D1 /* AppsPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */; };
+		D2036D8225D534C5001682D1 /* ASHorizontalSnappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2036D8125D534C5001682D1 /* ASHorizontalSnappingViewController.swift */; };
 		D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */; };
 		D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */; };
 		D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreviewCell.swift; sourceTree = "<group>"; };
+		D2036D8125D534C5001682D1 /* ASHorizontalSnappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalSnappingViewController.swift; sourceTree = "<group>"; };
 		D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
 		D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				D2E6E8C225A870A9002F344F /* ASTabBarController.swift */,
 				D2E965F725A9D00B00FDCF30 /* ASListViewController.swift */,
+				D2036D8125D534C5001682D1 /* ASHorizontalSnappingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				D2FE7A9225A8D28B000238B1 /* SearchService.swift in Sources */,
 				D28E0E4525D3EEF800B67A2A /* ASBodyLabel.swift in Sources */,
 				D2E6E8C325A870A9002F344F /* ASTabBarController.swift in Sources */,
+				D2036D8225D534C5001682D1 /* ASHorizontalSnappingViewController.swift in Sources */,
 				D2DBD1A325ADBEBF00294D05 /* AppsGroup.swift in Sources */,
 				D2E965FF25A9DB5500FDCF30 /* AppsHorizontalViewController.swift in Sources */,
 				D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */,

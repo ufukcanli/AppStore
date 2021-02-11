@@ -12,7 +12,7 @@ class AppsItemCell: UICollectionViewCell {
     
     static let reuseIdentifier = "AppsItemCell"
     
-    let imageView = ASAppIconImageView(width: 64, height: 64)
+    let imageView = ASAppIconImageView(width: 60, height: 60)
     let nameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 16))
     let companyLabel = ASTitleLabel(text: "Company Name", font: .systemFont(ofSize: 13))
     let getButton = ASGetButton(type: .system)

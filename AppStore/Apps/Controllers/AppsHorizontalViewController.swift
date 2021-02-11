@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppsHorizontalViewController: ASListViewController {
+class AppsHorizontalViewController: ASHorizontalSnappingViewController {
     
     var appsGroup: AppsGroup?
     var didSelectHandler: ((_ app: FeedResult) -> Void)?
@@ -22,9 +22,7 @@ class AppsHorizontalViewController: ASListViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(AppsItemCell.self, forCellWithReuseIdentifier: AppsItemCell.reuseIdentifier)
-        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.scrollDirection = .horizontal
-        }
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 
@@ -52,13 +50,21 @@ extension AppsHorizontalViewController {
     }
 }
 
+fileprivate let topBottomPadding: CGFloat = 12
+fileprivate let lineSpacing: CGFloat = 10
+
 extension AppsHorizontalViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 48, height: (view.frame.height - 32) / 3)
+        let height = (view.frame.height - 2 * topBottomPadding - 2 * lineSpacing) / 3
+        return CGSize(width: view.frame.width - 48, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return lineSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        return UIEdgeInsets(top: 0, left: 0, bottom: topBottomPadding, right: 0)
     }
 }
