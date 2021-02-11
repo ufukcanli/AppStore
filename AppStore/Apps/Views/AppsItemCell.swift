@@ -15,7 +15,7 @@ class AppsItemCell: UICollectionViewCell {
     let imageView = ASAppIconImageView(width: 60, height: 60)
     let nameLabel = ASTitleLabel(text: "App Name", font: .boldSystemFont(ofSize: 16))
     let companyLabel = ASTitleLabel(text: "Company Name", font: .systemFont(ofSize: 13))
-    let getButton = ASGetButton(type: .system)
+    let getButton = ASGetButton(backgroundColor: .customGray, title: "GET", color: .customBlue)
         
     override init(frame: CGRect) {
         super.init(frame: frame)
