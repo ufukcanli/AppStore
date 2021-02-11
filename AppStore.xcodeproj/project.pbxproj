@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2036D7A25D52EE8001682D1 /* AppsPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */; };
 		D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */; };
 		D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */; };
 		D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreviewCell.swift; sourceTree = "<group>"; };
 		D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
 		D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		D2E965F125A9CDF700FDCF30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */,
 				D28E0E3C25D3E74F00B67A2A /* AppsDetailCell.swift */,
 				D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */,
 				D25E9CA925AB0A3B001B74D6 /* AppsHeaderCell.swift */,
@@ -354,6 +357,7 @@
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
 				D25E9CAA25AB0A3B001B74D6 /* AppsHeaderCell.swift in Sources */,
 				D2CC9EA625AA12BF008C1654 /* ASGetButton.swift in Sources */,
+				D2036D7A25D52EE8001682D1 /* AppsPreviewCell.swift in Sources */,
 				D2E6E8CB25A881FF002F344F /* SearchResultCell.swift in Sources */,
 				D2CC9EAB25AA151A008C1654 /* ASAppIconImageView.swift in Sources */,
 			);
