@@ -27,13 +27,16 @@ class AppsReviewRowCell: UICollectionViewCell {
     func configureCell() {
         backgroundColor = .systemBackground
         
+        let padding: CGFloat = 16
+        
         addSubview(cellTitleLabel)
+        
         addSubview(horizontalViewController.view)
         horizontalViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            cellTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 18),
-            cellTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            cellTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            cellTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             
             horizontalViewController.view.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor, constant: 10),
             horizontalViewController.view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
