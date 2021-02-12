@@ -11,6 +11,7 @@ class AppsDetailViewController: ASListViewController {
     
     var appId: String!
     var app: SearchResult?
+    var reviews: AppsReviews?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,28 @@ class AppsDetailViewController: ASListViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchAppDetailInfo()
+        fetchAppDetails()
     }
     
-    func fetchAppDetailInfo() {
+    func fetchAppDetails() {
         let url = URL(string: "https://itunes.apple.com/lookup?id=\(appId!)")!
         AppsService.shared.taskForGetRequest(url: url) { [weak self] (result: Result<ResultArray, ASError>) in
             guard let self = self else { return }
             switch result {
             case .success(let resultArray):
                 self.app = resultArray.results.first
+                DispatchQueue.main.async { self.collectionView.reloadData() }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        let reviewsURL = URL(string: "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId!)/sortby=mostrecent/json")!
+        AppsService.shared.taskForGetRequest(url: reviewsURL) { [weak self] (result: Result<AppsReviews, ASError>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let appsReviews):
+                self.reviews = appsReviews
                 DispatchQueue.main.async { self.collectionView.reloadData() }
             case .failure(let error):
                 print(error)
@@ -64,7 +77,7 @@ extension AppsDetailViewController {
             return appsPreviewCell
         } else {
             let appsReviewRowCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsReviewRowCell.reuseIdentifier, for: indexPath) as! AppsReviewRowCell
-            //            if let app = app { appsReviewRowCell.horizontalViewController.app = app }
+            if let reviews = reviews { appsReviewRowCell.horizontalViewController.reviews = reviews }
             return appsReviewRowCell
         }
     }
