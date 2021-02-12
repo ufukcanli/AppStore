@@ -14,6 +14,7 @@ class AppsReviewCell: UICollectionViewCell {
     let titleLabel = ASTitleLabel(text: "Title", font: .boldSystemFont(ofSize: 18))
     let authorLabel = ASTitleLabel(text: "Author", font: .systemFont(ofSize: 16))
     let starsLabel = ASTitleLabel(text: "Stars", font: .systemFont(ofSize: 14))
+    let starsStackView = UIStackView()
     let bodyLabel = ASBodyLabel()
     
     override init(frame: CGRect) {
@@ -30,6 +31,23 @@ class AppsReviewCell: UICollectionViewCell {
         titleLabel.text = entry.title.label
         authorLabel.text = entry.author.name.label
         bodyLabel.text = entry.content.label
+        
+        for (index, star) in starsStackView.arrangedSubviews.enumerated() {
+            if let rating = Int(entry.rating.label) {
+                star.alpha = index >= rating ? 0 : 1
+            }
+        }
+    }
+    
+    func configureStarsStackView() {
+        for _ in 0..<5 {
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "star"))
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+            starsStackView.addArrangedSubview(imageView)
+        }
+        starsStackView.addArrangedSubview(UIView())
     }
     
     func configureCell() {
@@ -40,15 +58,17 @@ class AppsReviewCell: UICollectionViewCell {
         titleLabel.setContentCompressionResistancePriority(.init(0), for: .horizontal)
         authorLabel.textAlignment = .right
         
+        configureStarsStackView()
+        
         let padding: CGFloat = 16
         
         let horizontalStackView = UIStackView(arrangedSubviews: [titleLabel, authorLabel])
         horizontalStackView.spacing = 8
         
-        let verticalStackView = UIStackView(arrangedSubviews: [horizontalStackView, starsLabel, bodyLabel])
+        let verticalStackView = UIStackView(arrangedSubviews: [horizontalStackView, starsStackView, bodyLabel, UIView()])
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         verticalStackView.axis = .vertical
-        verticalStackView.spacing = 12
+        verticalStackView.spacing = 8
         
         addSubview(verticalStackView)
         

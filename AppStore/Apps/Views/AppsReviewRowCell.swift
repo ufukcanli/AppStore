@@ -12,6 +12,7 @@ class AppsReviewRowCell: UICollectionViewCell {
     static let reuseIdentifier = "AppsReviewRowCell"
     
     let horizontalViewController = AppsReviewsHorizontalViewController()
+    let cellTitleLabel = ASTitleLabel(text: "Reviews & Rating", font: .boldSystemFont(ofSize: 20))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,11 +27,15 @@ class AppsReviewRowCell: UICollectionViewCell {
     func configureCell() {
         backgroundColor = .systemBackground
         
+        addSubview(cellTitleLabel)
         addSubview(horizontalViewController.view)
         horizontalViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            horizontalViewController.view.topAnchor.constraint(equalTo: self.topAnchor),
+            cellTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 18),
+            cellTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            
+            horizontalViewController.view.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor, constant: 10),
             horizontalViewController.view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             horizontalViewController.view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             horizontalViewController.view.leadingAnchor.constraint(equalTo: self.leadingAnchor)
