@@ -43,13 +43,14 @@ class AppsDetailViewController: ASListViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(AppsDetailCell.self, forCellWithReuseIdentifier: AppsDetailCell.reuseIdentifier)
         collectionView.register(AppsPreviewCell.self, forCellWithReuseIdentifier: AppsPreviewCell.reuseIdentifier)
+        collectionView.register(AppsReviewRowCell.self, forCellWithReuseIdentifier: AppsReviewRowCell.reuseIdentifier)
     }
 }
 
 extension AppsDetailViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,10 +58,14 @@ extension AppsDetailViewController {
             let appsDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsDetailCell.reuseIdentifier, for: indexPath) as! AppsDetailCell
             if let app = app { appsDetailCell.updateCell(app: app) }
             return appsDetailCell
-        } else {
+        } else if indexPath.item == 1 {
             let appsPreviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPreviewCell.reuseIdentifier, for: indexPath) as! AppsPreviewCell
             if let app = app { appsPreviewCell.horizontalViewController.app = app }
             return appsPreviewCell
+        } else {
+            let appsReviewRowCell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsReviewRowCell.reuseIdentifier, for: indexPath) as! AppsReviewRowCell
+            //            if let app = app { appsReviewRowCell.horizontalViewController.app = app }
+            return appsReviewRowCell
         }
     }
 }
@@ -74,8 +79,10 @@ extension AppsDetailViewController: UICollectionViewDelegateFlowLayout {
             dummyCell.layoutIfNeeded()
             let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: view.frame.width, height: 1000))
             return CGSize(width: view.frame.width, height: estimatedSize.height)
-        } else {
+        } else if indexPath.item == 1 {
             return CGSize(width: view.frame.width, height: 500)
+        } else {
+            return CGSize(width: view.frame.width, height: 250)
         }
     }
 }
