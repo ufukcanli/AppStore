@@ -22,6 +22,10 @@ class TodayViewController: ASListViewController {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
             gestureRecognizer.view?.frame = self.startingFrame ?? .zero
             self.detailView.layer.cornerRadius = 16
+            
+            if let tabBarFrame = self.tabBarController?.tabBar.frame {
+                self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
+            }
         } completion: { _ in
             gestureRecognizer.view?.removeFromSuperview()
         }
@@ -64,6 +68,8 @@ extension TodayViewController {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
             self.detailView.frame = self.view.frame // ending frame
             self.detailView.layer.cornerRadius = 0
+            
+            self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
         }
     }
 }
