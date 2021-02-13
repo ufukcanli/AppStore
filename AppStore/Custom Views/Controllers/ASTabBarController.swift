@@ -20,7 +20,7 @@ class ASTabBarController: UITabBarController {
 //        tabBar.barTintColor = .systemYellow
         
         viewControllers = [
-            createNavigationController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
+            createNavigationController(viewController: TodayViewController(), title: "Today", imageName: "today_icon"),
             createNavigationController(viewController: AppsViewController(), title: "Apps", imageName: "apps"),
             createNavigationController(viewController: SearchViewController(), title: "Search", imageName: "search")
         ]
@@ -35,5 +35,4 @@ class ASTabBarController: UITabBarController {
         navigationController.tabBarItem.image = UIImage(named: imageName)
         return navigationController
     }
-
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D2036D7A25D52EE8001682D1 /* AppsPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */; };
 		D2036D8225D534C5001682D1 /* ASHorizontalSnappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2036D8125D534C5001682D1 /* ASHorizontalSnappingViewController.swift */; };
+		D20B974125D7DE8200030403 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B974025D7DE8200030403 /* TodayViewController.swift */; };
+		D20B974625D7DFD400030403 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B974525D7DFD400030403 /* TodayCell.swift */; };
 		D21DFE7425D588F500518971 /* AppsPreviewHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DFE7325D588F500518971 /* AppsPreviewHorizontalViewController.swift */; };
 		D21DFE7825D58D4600518971 /* AppsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DFE7725D58D4600518971 /* AppsScreenshotCell.swift */; };
 		D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		D2036D7925D52EE8001682D1 /* AppsPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreviewCell.swift; sourceTree = "<group>"; };
 		D2036D8125D534C5001682D1 /* ASHorizontalSnappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASHorizontalSnappingViewController.swift; sourceTree = "<group>"; };
+		D20B974025D7DE8200030403 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D20B974525D7DFD400030403 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		D21DFE7325D588F500518971 /* AppsPreviewHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreviewHorizontalViewController.swift; sourceTree = "<group>"; };
 		D21DFE7725D58D4600518971 /* AppsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsScreenshotCell.swift; sourceTree = "<group>"; };
 		D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D20B973F25D7D6BA00030403 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				D20B974025D7DE8200030403 /* TodayViewController.swift */,
+				D20B974525D7DFD400030403 /* TodayCell.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		D25E9CA425AAE396001B74D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 		D2E6E8A925A87006002F344F /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				D20B973F25D7D6BA00030403 /* Today */,
 				D2E965EF25A9CDDB00FDCF30 /* Apps */,
 				D2FE7AA225A8FC68000238B1 /* Search */,
 				D2FE7AA625A8FCE5000238B1 /* Utilities */,
@@ -365,6 +379,7 @@
 				D2E965FF25A9DB5500FDCF30 /* AppsHorizontalViewController.swift in Sources */,
 				D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */,
 				D2E965FC25A9D42400FDCF30 /* AppsGroupCell.swift in Sources */,
+				D20B974625D7DFD400030403 /* TodayCell.swift in Sources */,
 				D2DBD1A025ADBC9900294D05 /* AppsService.swift in Sources */,
 				D2FE7A9925A8D68C000238B1 /* SearchResult.swift in Sources */,
 				D28E0E4225D3EBEB00B67A2A /* UIColor+Extension.swift in Sources */,
@@ -376,6 +391,7 @@
 				D2E6977A25D66F7200F997CF /* AppsReviewRowCell.swift in Sources */,
 				D2E965F825A9D00B00FDCF30 /* ASListViewController.swift in Sources */,
 				D28E0E3D25D3E74F00B67A2A /* AppsDetailCell.swift in Sources */,
+				D20B974125D7DE8200030403 /* TodayViewController.swift in Sources */,
 				D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */,
 				D2E965F325A9CEB400FDCF30 /* AppsViewController.swift in Sources */,
 				D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */,
