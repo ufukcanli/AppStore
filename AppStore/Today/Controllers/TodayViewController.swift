@@ -9,7 +9,7 @@ import UIKit
 
 class TodayViewController: ASListViewController {
     
-    let detailView = UIView()
+    let detailScreen = TodayDetailViewController()
     var startingFrame: CGRect?
 
     override func viewDidLoad() {
@@ -21,13 +21,17 @@ class TodayViewController: ASListViewController {
     @objc func didTapDismissDetailView(_ gestureRecognizer: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
             gestureRecognizer.view?.frame = self.startingFrame ?? .zero
-            self.detailView.layer.cornerRadius = 16
+            self.detailScreen.view.layer.cornerRadius = 16
             
             if let tabBarFrame = self.tabBarController?.tabBar.frame {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
             }
         } completion: { _ in
             gestureRecognizer.view?.removeFromSuperview()
+            
+            self.detailScreen.willMove(toParent: nil)
+            self.detailScreen.removeFromParent()
+            self.detailScreen.view.removeFromSuperview()
         }
     }
     
@@ -55,19 +59,20 @@ extension TodayViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
         
-        detailView.layer.cornerRadius = 16
-        detailView.backgroundColor = .systemGreen
-        detailView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDismissDetailView)))
-        view.addSubview(detailView)
+        detailScreen.view.layer.cornerRadius = 16
+        detailScreen.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDismissDetailView)))
+        view.addSubview(detailScreen.view)
+        self.addChild(detailScreen)
+        detailScreen.didMove(toParent: self)
         
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         self.startingFrame = startingFrame
-        detailView.frame = startingFrame
+        detailScreen.view.frame = startingFrame
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
-            self.detailView.frame = self.view.frame // ending frame
-            self.detailView.layer.cornerRadius = 0
+            self.detailScreen.view.frame = self.view.frame // ending frame
+            self.detailScreen.view.layer.cornerRadius = 0
             
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
         }
