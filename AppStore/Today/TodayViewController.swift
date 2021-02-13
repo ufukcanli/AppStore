@@ -8,11 +8,23 @@
 import UIKit
 
 class TodayViewController: ASListViewController {
+    
+    let detailView = UIView()
+    var startingFrame: CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureViewController()
+    }
+    
+    @objc func didTapDismissDetailView(_ gestureRecognizer: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
+            gestureRecognizer.view?.frame = self.startingFrame ?? .zero
+            self.detailView.layer.cornerRadius = 16
+        } completion: { _ in
+            gestureRecognizer.view?.removeFromSuperview()
+        }
     }
     
     func configureViewController() {
@@ -38,6 +50,21 @@ extension TodayViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
+        
+        detailView.layer.cornerRadius = 16
+        detailView.backgroundColor = .systemGreen
+        detailView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDismissDetailView)))
+        view.addSubview(detailView)
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+        self.startingFrame = startingFrame
+        detailView.frame = startingFrame
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
+            self.detailView.frame = self.view.frame // ending frame
+            self.detailView.layer.cornerRadius = 0
+        }
     }
 }
 
