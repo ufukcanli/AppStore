@@ -9,7 +9,11 @@ import UIKit
 
 class TodayViewController: ASListViewController {
     
-    let detailScreen = TodayDetailViewController()
+    var detailViewController: TodayDetailViewController!
+    var topConstraint: NSLayoutConstraint?
+    var leadingConstraint: NSLayoutConstraint?
+    var widthConstraint: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
     var startingFrame: CGRect?
 
     override func viewDidLoad() {
@@ -20,8 +24,17 @@ class TodayViewController: ASListViewController {
     
     @objc func didTapDismissDetailView(_ gestureRecognizer: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
-            gestureRecognizer.view?.frame = self.startingFrame ?? .zero
-            self.detailScreen.view.layer.cornerRadius = 16
+            
+            guard let startingFrame = self.startingFrame else { return }
+            
+            self.topConstraint?.constant = startingFrame.origin.y
+            self.leadingConstraint?.constant = startingFrame.origin.x
+            self.widthConstraint?.constant = startingFrame.width
+            self.heightConstraint?.constant = startingFrame.height
+            
+            self.view.layoutIfNeeded() // starts animation
+            self.detailViewController.tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
+            self.detailViewController.tableView.showsVerticalScrollIndicator = false
             
             if let tabBarFrame = self.tabBarController?.tabBar.frame {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
@@ -29,9 +42,9 @@ class TodayViewController: ASListViewController {
         } completion: { _ in
             gestureRecognizer.view?.removeFromSuperview()
             
-            self.detailScreen.willMove(toParent: nil)
-            self.detailScreen.removeFromParent()
-            self.detailScreen.view.removeFromSuperview()
+            self.detailViewController.willMove(toParent: nil)
+            self.detailViewController.removeFromParent()
+            self.detailViewController.view.removeFromSuperview()
         }
     }
     
@@ -59,20 +72,35 @@ extension TodayViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
         
-        detailScreen.view.layer.cornerRadius = 16
-        detailScreen.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDismissDetailView)))
-        view.addSubview(detailScreen.view)
-        self.addChild(detailScreen)
-        detailScreen.didMove(toParent: self)
+        detailViewController = TodayDetailViewController()
+        detailViewController.view.layer.cornerRadius = 16
+        detailViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDismissDetailView)))
+        view.addSubview(detailViewController.view)
+        self.addChild(detailViewController)
+        detailViewController.didMove(toParent: self)
         
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         self.startingFrame = startingFrame
-        detailScreen.view.frame = startingFrame
+        
+        detailViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.topConstraint = detailViewController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
+        self.leadingConstraint = detailViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
+        self.widthConstraint = detailViewController.view.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        self.heightConstraint = detailViewController.view.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        
+        [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach { $0?.isActive = true }
+        
+        self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut) {
-            self.detailScreen.view.frame = self.view.frame // ending frame
-            self.detailScreen.view.layer.cornerRadius = 0
+
+            self.leadingConstraint?.constant = 0
+            self.topConstraint?.constant = 0
+            self.widthConstraint?.constant = self.view.frame.width
+            self.heightConstraint?.constant = self.view.frame.height
+            
+            self.view.layoutIfNeeded() // starts animation
             
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
         }

@@ -29,25 +29,12 @@ extension TodayDetailViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 350
-        } else {
-            return 450
-        }
+        if indexPath.row == 0 { return 350 }
+        return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = UITableViewCell()
-            let todayCell = TodayCell()
-            cell.addSubview(todayCell)
-            todayCell.translatesAutoresizingMaskIntoConstraints = false
-            todayCell.centerXAnchor.constraint(equalTo: cell.centerXAnchor).isActive = true
-            todayCell.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
-            return cell
-        } else {
-            let cell = TodayDetailDescriptionCell()
-            return cell
-        }
+        if indexPath.row == 0 { return TodayDetailHeaderCell() }
+        return TodayDetailDescriptionCell()
     }
 }
