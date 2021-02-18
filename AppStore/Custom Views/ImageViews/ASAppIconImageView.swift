@@ -28,7 +28,7 @@ class ASAppIconImageView: UIImageView {
     }
     
     func configureImageView() {
-        backgroundColor = .systemRed
+        backgroundColor = .systemPink
         layer.cornerRadius = 12
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false

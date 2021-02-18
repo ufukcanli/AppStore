@@ -14,7 +14,7 @@ class AppsHeaderCell: UICollectionViewCell {
     
     let companyLabel = ASTitleLabel(text: "COMPANY NAME", font: .boldSystemFont(ofSize: 12))
     let titleLabel = ASTitleLabel(text: "Keeping up with friends faster than ever", font: .systemFont(ofSize: 26))
-    let imageView = UIImageView()
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "holiday"))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,7 +38,7 @@ class AppsHeaderCell: UICollectionViewCell {
         companyLabel.textColor = .systemBlue
         
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemRed
+        imageView.backgroundColor = .systemTeal
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         addSubview(imageView)

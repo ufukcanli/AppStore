@@ -15,6 +15,9 @@
 		D20B975025D7F73100030403 /* TodayDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B974F25D7F73100030403 /* TodayDetailDescriptionCell.swift */; };
 		D21DFE7425D588F500518971 /* AppsPreviewHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DFE7325D588F500518971 /* AppsPreviewHorizontalViewController.swift */; };
 		D21DFE7825D58D4600518971 /* AppsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21DFE7725D58D4600518971 /* AppsScreenshotCell.swift */; };
+		D221AE0E25DE53B000930CDC /* AppsCompositionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D221AE0D25DE53B000930CDC /* AppsCompositionalViewController.swift */; };
+		D221AE1125DE609100930CDC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D221AE1025DE609100930CDC /* UIHelper.swift */; };
+		D221AE1425DE7D9000930CDC /* CompositionalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D221AE1325DE7D9000930CDC /* CompositionalHeaderView.swift */; };
 		D244DD6525D3D6BC006744C5 /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */; };
 		D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */; };
 		D25E9CA625AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */; };
@@ -60,6 +63,9 @@
 		D20B974F25D7F73100030403 /* TodayDetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailDescriptionCell.swift; sourceTree = "<group>"; };
 		D21DFE7325D588F500518971 /* AppsPreviewHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPreviewHorizontalViewController.swift; sourceTree = "<group>"; };
 		D21DFE7725D58D4600518971 /* AppsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsScreenshotCell.swift; sourceTree = "<group>"; };
+		D221AE0D25DE53B000930CDC /* AppsCompositionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCompositionalViewController.swift; sourceTree = "<group>"; };
+		D221AE1025DE609100930CDC /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		D221AE1325DE7D9000930CDC /* CompositionalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalHeaderView.swift; sourceTree = "<group>"; };
 		D244DD6425D3D6BC006744C5 /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		D25E9CA025AADEC8001B74D6 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
 		D25E9CA525AAE3EF001B74D6 /* AppsHeaderHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,16 @@
 				D20B974025D7DE8200030403 /* TodayViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D221AE0C25DE535800930CDC /* Compositional */ = {
+			isa = PBXGroup;
+			children = (
+				D221AE0D25DE53B000930CDC /* AppsCompositionalViewController.swift */,
+				D221AE1325DE7D9000930CDC /* CompositionalHeaderView.swift */,
+				D221AE1025DE609100930CDC /* UIHelper.swift */,
+			);
+			path = Compositional;
 			sourceTree = "<group>";
 		};
 		D25E9CA425AAE396001B74D6 /* Controllers */ = {
@@ -222,6 +238,7 @@
 				D2E965F025A9CDF200FDCF30 /* Models */,
 				D2E965F125A9CDF700FDCF30 /* Views */,
 				D25E9CA425AAE396001B74D6 /* Controllers */,
+				D221AE0C25DE535800930CDC /* Compositional */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -421,11 +438,14 @@
 				D20B974125D7DE8200030403 /* TodayViewController.swift in Sources */,
 				D25E9CA125AADEC8001B74D6 /* AppsHeaderView.swift in Sources */,
 				D2E965F325A9CEB400FDCF30 /* AppsViewController.swift in Sources */,
+				D221AE0E25DE53B000930CDC /* AppsCompositionalViewController.swift in Sources */,
 				D2FE7A9525A8D35F000238B1 /* ASError.swift in Sources */,
 				D21DFE7825D58D4600518971 /* AppsScreenshotCell.swift in Sources */,
 				D2CC9E9D25AA0B82008C1654 /* AppsItemCell.swift in Sources */,
+				D221AE1125DE609100930CDC /* UIHelper.swift in Sources */,
 				D2E6E8AD25A87006002F344F /* SceneDelegate.swift in Sources */,
 				D21DFE7425D588F500518971 /* AppsPreviewHorizontalViewController.swift in Sources */,
+				D221AE1425DE7D9000930CDC /* CompositionalHeaderView.swift in Sources */,
 				D2CD66A825DBC65E0025A3C5 /* TodayDetailHeaderCell.swift in Sources */,
 				D25E9CAA25AB0A3B001B74D6 /* AppsHeaderCell.swift in Sources */,
 				D2CC9EA625AA12BF008C1654 /* ASGetButton.swift in Sources */,
